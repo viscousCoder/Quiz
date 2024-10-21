@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div id="auth-section">
+            <div class="tabs">
+                <button onclick="showTab('login')" id="login-tab">Login</button>
+                <button onclick="showTab('register')" id="register-tab">Register</button>
+            </div>
+            <div id="login-form" class="form">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button onclick="login()">Login</button>
+            </div>
+            <div id="register-form" class="form">
+                <h2>Register</h2>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <input type="tel" id="reg-phone" placeholder="Phone Number" required>
+                <button onclick="register()">Register</button>
+            </div>
+        </div> -->
+
+        <div id="auth-section">
+            <div class="tabs">
+                <button onclick="showTab('login')" id="login-tab">Login</button>
+                <button onclick="showTab('register')" id="register-tab">Register</button>
+            </div>
+            <div id="login-form" class="form">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <div class="error-message" id="login-email-error"></div>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <div class="error-message" id="login-password-error"></div>
+                <button onclick="login()">Login</button>
+            </div>
+            <div id="register-form" class="form">
+                <h2>Register</h2>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <div class="error-message" id="reg-username-error"></div>
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <div class="error-message" id="reg-email-error"></div>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <div class="error-message" id="reg-password-error"></div>
+                <input type="tel" id="reg-phone" placeholder="Phone Number" required pattern="[0-9]{10}" required>
+
+
+                <div class="error-message" id="reg-phone-error"></div>
+                <button onclick="register()">Register</button>
+            </div>
+        </div>
+
+        <div id="home-section" class="hidden">
+            <h2>Welcome, <span id="user-name"></span></h2>
+            <p>User Details:</p>
+            <p>Email: <span id="user-email"></span></p>
+            <p>Phone: <span id="user-phone"></span></p>
+            <button onclick="startQuiz()">Start Quiz</button>
+            <button onclick="showSummary()">Show Summary</button>
+            <button onclick="showAllSummary()">Show All Summary</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <!-- <div id="quiz-section" class="hidden">
+            <div id="quiz-container">
+                <div id="question-container">
+                    <p id="question-category"></p>
+                    <p id="question-text"></p>
+                    <div id="options"></div>
+                </div>
+                <button onclick="previousQuestion()">Previous</button>
+                <button onclick="nextQuestion()">Next</button>
+            </div>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+        </div> -->
+
+
+
+        <div id="quiz-section" class="hidden">
+            <div id="timer" class="timer">Time Left: 2:00</div>
+            <div id="question-category"></div>
+            <div id="question-text"></div>
+            <div id="options"></div>
+            <button onclick="previousQuestion()">Previous</button>
+            <button onclick="nextQuestion()">Next</button>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div id="modal" class="hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
